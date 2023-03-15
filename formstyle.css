@@ -1,0 +1,14 @@
+input{
+    width: 100%;
+    margin-bottom: 10px;
+}
+input[type="text"], input[type="password"] ,input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #673ab7;
+    font-size: 16px;
+}
