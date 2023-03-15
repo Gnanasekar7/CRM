@@ -95,6 +95,13 @@ function Reg () {
                                 </span>):null
                                 }
                         <br></br>
+                        <input type='text' placeholder='88888-88888' name='pno' onChange={handleInput}></input>
+                        {errors.pno.required?
+                        (<span className="text-danger" >
+                                     phNo is required.
+                                </span>):null
+                                }
+                        <br></br>
                         <input type='password' placeholder="password" name='pass' onChange={handleInput}></input>
                         {errors.pass.required?
                         (<span className="text-danger" >
@@ -104,13 +111,7 @@ function Reg () {
                         <br></br>
                         <input type='password' placeholder="Confirm Password" name='cpass' onChange={handleInput}></input>
                         <br></br>
-                        <input type='text' placeholder='88888-88888' name='pno' onChange={handleInput}></input>
-                        {errors.pno.required?
-                        (<span className="text-danger" >
-                                     phNo is required.
-                                </span>):null
-                                }
-                        <br></br>
+                        
 
                         <input type='submit' value='Register'/>
                     </form>
