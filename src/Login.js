@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
 function Login() {
     const initialCredErrors={
@@ -6,14 +6,28 @@ function Login() {
         pass:{required:false}
     }
     const[errors,setErrors]=useState(initialCredErrors)
+
+   
     const[recieved,setData]=useState(null)
         useEffect(()=>{           
             fetch("http://127.0.0.1:8000/register")
             .then((data)=>{
-                 
+                setData(data)               
             })
             .catch(err=>console.log(err))
         },[])
+        const handleLogin=()=>{
+            const hasError=false
+            if(recieved.Email !== cred.email){
+                errors.email.required=true
+                hasError=true
+            }
+            if(recieved.Password!==cred.pass){
+                errors.email.required=true
+                hasError=true
+            }
+            setErrors(errors)
+        }
 
        const [cred,setCred]=useState({
         email:'',
@@ -27,8 +41,8 @@ function Login() {
                 <div className='title'>Login</div>
                 <div className='cred'>
                     <form onSubmit={handleLogin}>
-                <label>Email    </label>
-                        <input type='email' placeholder="Email" name='email' onChange={handleCred}></input>
+                <label>email    </label>
+                        <input type='email' placeholder="email" name='email' onChange={handleCred}></input>
                         {errors.email.required?
                         (<span className='text-danger'>
                             email already exists
