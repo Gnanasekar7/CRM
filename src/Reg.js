@@ -3,7 +3,7 @@ import React from 'react'
 // import { userValidation } from './FormValidate'
 // import axios from 'axios'; 
 import { useState } from 'react';
-import { RegisterApi } from './services/Api';
+import { RegisterApi } from './services/RegApi';
 function Reg () {
 
     const initialStateErrors = {
