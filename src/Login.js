@@ -1,18 +1,23 @@
-import React, { useState } from 'react'
-import { Link} from 'react-router-dom'
+import React, { useState ,useEffect} from 'react'
+import { Link } from 'react-router-dom'
 function Login() {
     const initialCredErrors={
         email:{required:false},
         pass:{required:false}
     }
     const[errors,setErrors]=useState(initialCredErrors)
-    const handleLogin =() =>{
+    const[recieved,setData]=useState(null)
+        useEffect(()=>{           
+            fetch("http://127.0.0.1:8000/register")
+            .then((data)=>{
+                 
+            })
+            .catch(err=>console.log(err))
+        },[])
 
-
-    }
-    const [cred,setCred]=useState({
-        email:{required:false},
-        pass:{required:false}
+       const [cred,setCred]=useState({
+        email:'',
+        pass:''
     })
     const handleCred=(event)=>{
         setCred({...cred,[event.target.name]:event.target.value})

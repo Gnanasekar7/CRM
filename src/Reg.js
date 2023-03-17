@@ -14,7 +14,7 @@ function Reg () {
         cpass:{required:false},
         pno: {required:false},       
     }
-    const [errors,setErrors] = useState(initialStateErrors);
+    const [errors,setErrors] = useState(initialStateErrors)
 
     const handleSubmit=(event)=>{
         event.preventDefault() 
