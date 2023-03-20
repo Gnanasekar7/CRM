@@ -49,18 +49,18 @@ function Reg () {
         hasError=true
        }
        
-       if( inputs.pass !==''  ){
+    if( inputs.pass !==''  ){
        if(!regularExpression.test(inputs.pass) ){
-       
         alert("password should contain atleast one number and one special character")
         hasError=true
        }
     }
-
-       if(inputs.cpass === ''){
-        errors.cpass.required =true
+    if(inputs.cpass !==''){
+       if(inputs.cpass !== inputs.pass){
+        alert("Password doesn't match")
         hasError=true
        }
+    }
        if(inputs.pno === ''){
         errors.pno.required = true
         hasError=true
