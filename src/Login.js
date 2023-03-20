@@ -17,7 +17,7 @@ function Login() {
             .catch(err=>console.log(err))
         },[])
         const handleLogin=()=>{
-            const hasError=false
+            var  hasError=false
             if(recieved.Email !== cred.email){
                 errors.email.required=true
                 hasError=true
@@ -27,6 +27,9 @@ function Login() {
                 hasError=true
             }
             setErrors(errors)
+            if(!hasError){
+                console.log('logged in')
+            }
         }
 
        const [cred,setCred]=useState({
