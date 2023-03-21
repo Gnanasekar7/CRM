@@ -35,6 +35,7 @@ function Reg () {
 
 
             hasError=true
+            
        }
        if(inputs.lname === ''){
             errors.lname.required = true
@@ -47,6 +48,7 @@ function Reg () {
        if(inputs.pass === '' ){
         errors.pass.required = true
         hasError=true
+        
        }
        
     if( inputs.pass !==''  ){
